@@ -1,0 +1,28 @@
+create table if not exists sharedatabase(
+shareId int primary key auto_increment,
+userName varchar(64) not null default '',
+headName varchar(64) not null default '',
+urlName varchar(2048) not null default '',
+tagName varchar(2048) not null default '',
+thumbsUp int not null default 0,
+date varchar(64) not null default ''
+); 
+
+create table if not exists comdatabase(
+comId int primary key auto_increment,
+shareId int not null default 0,
+comName varchar(2048) not null default '',
+ip varchar(64) not null default '',
+date varchar(64) not null default ''
+); 
+
+create table if not exists ippraise(
+ippId int primary key auto_increment,
+ip varchar(64) not null default '',
+shareId int not null default 0
+); 
+
+create table if not exists tags(
+tagId int primary key auto_increment,
+tag varchar(64) not null default ''
+); 
